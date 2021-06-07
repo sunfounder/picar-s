@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>車の装備！ &mdash; SunFounder_PiCar-S  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+        <script src="https://ezblock.cc/readDocFile/topHead.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://ezblock.cc/readDocFile/topHead.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="障害物回避" href="obstacle_avoidance.html" />
+    <link rel="prev" title="補正" href="calibration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder_PiCar-S
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">部品一覧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">前書き</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_the_car.html">車の組み立て</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circuits_building.html">回路構築</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_started_with_raspberry_pi.html">ラズベリー パイを始めよう</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servo_configuration.html">サーボ構成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration.html">補正</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">車の装備！</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="obstacle_avoidance.html">障害物回避</a></li>
+<li class="toctree-l2"><a class="reference internal" href="light_following.html">ライトフォロワー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="line_following.html">ラインフォロー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="combination.html">組合せ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">付録</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder_PiCar-S</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>車の装備！</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/arming_the_car.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="arming-the-car">
+<h1>車の装備！<a class="headerlink" href="#arming-the-car" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>センサーモジュールのない車は、視覚や聴覚のない人と同じように武装していないため、周囲の環境を感じない。だから我々がこれからすること、車を装備させて、周囲の物を検出できるようにすることである。次に、<a href="#id1"><span class="problematic" id="id2">**</span></a>PiCar**を**PiCar-S**に変える。</p>
+<p>正確にはPiCar-Sとは何か？ -------データを収集して処理する機能を車に与えるいくつかのセンサーをPiCarに装備する。<strong>PiCar**への**センサーモジュール**は、**ゲームコンソール**への**カートリッジ**である。それらはゲームの基本的なデザインに追加されるため、プレイが豊かになる。コードにも似ている。プロセッサはSunFounder_PiCarを使用して車の動作を駆動し、さまざまなモジュール（**SunFounder_Light_Follower</strong>、<strong>SunFounder_Line_Follower</strong>、<strong>SunFounder_Ultrasonic_Avoidance</strong>）に対応するコードパッケージを読み出す。</p>
+<p>以下の対応するモジュールの説明の配線に従って、希望のセンサーモジュールを組み立てる。<a href="#id1"><span class="problematic" id="id2">**</span></a>トランスフォーマーを**楽しんでください！</p>
+<img alt="_images/image232.png" src="_images/image232.png" />
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="obstacle_avoidance.html">障害物回避</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="obstacle_avoidance.html#how-it-works">動作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obstacle_avoidance.html#procedures">手順</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obstacle_avoidance.html#code-explanation-for-ultra-sonic-avoid-py">ultra_sonic_avoid.pyのコードの説明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="light_following.html">ライトフォロワー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="light_following.html#how-it-works">動作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="light_following.html#procedures">手順</a></li>
+<li class="toctree-l2"><a class="reference internal" href="light_following.html#code-explanation-for-light-follower-py">－       light_follower.pyのコードの説明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="line_following.html">ラインフォロー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="line_following.html#how-it-works">動作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="line_following.html#procedures">手順</a></li>
+<li class="toctree-l2"><a class="reference internal" href="line_following.html#how-to-make-a-track-for-line-following">ラインフォローの追跡を作る方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="line_following.html#code-explanation-of-line-follower-py">line_follower.pyのコードの説明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="combination.html">組合せ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="combination.html#how-it-works">動作原理</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="obstacle_avoidance.html" class="btn btn-neutral float-right" title="障害物回避" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="calibration.html" class="btn btn-neutral float-left" title="補正" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, sunfounder
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>補正 &mdash; SunFounder_PiCar-S  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+        <script src="https://ezblock.cc/readDocFile/topHead.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://ezblock.cc/readDocFile/topHead.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="車の装備！" href="arming_the_car.html" />
+    <link rel="prev" title="サーボ構成" href="servo_configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder_PiCar-S
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">部品一覧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">前書き</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_the_car.html">車の組み立て</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circuits_building.html">回路構築</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_started_with_raspberry_pi.html">ラズベリー パイを始めよう</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servo_configuration.html">サーボ構成</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">補正</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#calibrate-the-servo">サーボを補正する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calibrate-the-motors">モーターを補正する</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arming_the_car.html">車の装備！</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">付録</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder_PiCar-S</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>補正</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/calibration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="calibration">
+<h1>補正<a class="headerlink" href="#calibration" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<section id="calibrate-the-servo">
+<h2>サーボを補正する<a class="headerlink" href="#calibrate-the-servo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以前にサーボを90度に調整するコマンドを覚えているか？今回、他の2つのコマンドについて説明する。</p>
+<p>2番目のコマンド**front-wheel-test**は、組み立て後に前輪が柔軟に回転できるかどうかをテストするために使用される。このコマンドを実行すると、左右に駆動する。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">picar</span> <span class="n">front</span><span class="o">-</span><span class="n">wheel</span><span class="o">-</span><span class="n">test</span>
+</pre></div>
+</div>
+<img alt="_images/image99.png" src="_images/image99.png" />
+<p>前輪がまっすぐな状態では、前輪の方向が正確に前を向いていない場合がある。フロントシャーシの真ん中の線から明らかなずれがある場合は、サーボを組み立て直して、もう一度**servo-instal**を実行する。ほんの少しのずれ（約0〜15度のような）であるならば、ソフトウェアによって調整することができる。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>SunFounder_PiCar/pica**フォルダーを開く：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">SunFounder_PiCar</span><span class="o">/</span><span class="n">picar</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="n">config</span>
+</pre></div>
+</div>
+<img alt="_images/image100.png" src="_images/image100.png" />
+<p>エディターでフォルダーの**config**ファイルを開く。いくつかのパラメーターが表示される。<a href="#id1"><span class="problematic" id="id2">**</span></a>turning_offset**の値は、前輪を調整するために使用される。デフォルトではその値は0となっている。前輪を**少し右に回したい**場合は、<a href="#id3"><span class="problematic" id="id4">**</span></a>大きな値**に変更してください。<a href="#id5"><span class="problematic" id="id6">**</span></a>左寄りにする**には、<a href="#id7"><span class="problematic" id="id8">**</span></a>小さい値**に設定する（負の数に設定できる）。</p>
+<p>ただし、ホイールを過度に構成**しない**でください（-30〜30の推奨値）。そうしないと、サーボが動かなくなったり壊れたりする恐れがある。</p>
+<p>Turning_offsetの値を変更した後、<a href="#id1"><span class="problematic" id="id2">**</span></a>Ctrl+O**を押して変更を保存し、<a href="#id3"><span class="problematic" id="id4">**</span></a>Ctrl+X**を押して終了する。<a href="#id5"><span class="problematic" id="id6">**</span></a>picar servo-install**コマンドを実行して、前輪のステータスを確認する。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">picar</span> <span class="n">servo</span><span class="o">-</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>そして前輪が正面を向いていない場合は、ファイル**config**を数回編集する必要がある。通常3〜5回程度調整する必要がある。前輪の補正が完了したら、後輪の補正に進む。</p>
+</section>
+<section id="calibrate-the-motors">
+<h2>モーターを補正する<a class="headerlink" href="#calibrate-the-motors" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>2つのDCモーターの配線はランダムであるため、モーターのVCCとGNDがホイールに逆に接続され、コードで構成されているように車輪が逆方向に回転すべきときに、正面に回転してしまう場合がある。したがって、後輪を交互に加速と減速を同時に行う3番目のコマンドを使用できる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">picar</span> <span class="n">rear</span><span class="o">-</span><span class="n">wheel</span><span class="o">-</span><span class="n">test</span>
+</pre></div>
+</div>
+<img alt="_images/image101.png" src="_images/image101.png" />
+<p>後輪の回転方向が画面と同じかどうかを確認してください。2つの車輪は2つのモーターによって別々に駆動されることに注意してください。一つが前方に回転し、もう一つが後方に回転する場合がある。その場合は、そのコマンドで逆回転する1つまたは両方のホイールを調整する必要がある。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">SunFounder_PiCar</span><span class="o">/</span><span class="n">picar</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="n">config</span>
+</pre></div>
+</div>
+<img alt="_images/image100.png" src="_images/image100.png" />
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>forward_A**と**forward_B**は2つのモーターのデフォルトの回転方向を変更する。値は**0**または**1**のみで、時計回りと反時計回りの回転を表す。デフォルトでは、両方のパラメーターで**0**となっている。したがって、車輪が逆回転する場合は、ホイールの対応するパラメーターを**1**に変更するだけである。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Ctrl+O**を押して変更を保存し、<a href="#id3"><span class="problematic" id="id4">**</span></a>Ctrl+X**を押して終了する。</p>
+<p>コマンド**picar Rear-wheel-test**を再度実行して、コマンドに従って後輪が回転しているかどうかを確認する。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">picar</span> <span class="n">rear</span><span class="o">-</span><span class="n">wheel</span><span class="o">-</span><span class="n">test</span>
+</pre></div>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>config**を**PiCar-S**の下のディレクトリの**example**にコピーする。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">config</span> <span class="o">~/</span><span class="n">SunFounder_PiCar</span><span class="o">-</span><span class="n">S</span><span class="o">/</span><span class="n">example</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arming_the_car.html" class="btn btn-neutral float-right" title="車の装備！" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="servo_configuration.html" class="btn btn-neutral float-left" title="サーボ構成" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, sunfounder
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

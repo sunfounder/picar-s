@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>モジュール &mdash; SunFounder_PiCar-S  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://ezblock.cc/readDocFile/topHead.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://ezblock.cc/readDocFile/topHead.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="手動でインストールする" href="installing_manually.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder_PiCar-S
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">部品一覧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">前書き</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_the_car.html">車の組み立て</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circuits_building.html">回路構築</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_started_with_raspberry_pi.html">ラズベリー パイを始めよう</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servo_configuration.html">サーボ構成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration.html">補正</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arming_the_car.html">車の装備！</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="appendix.html">付録</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installing_manually.html">手動でインストールする</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">モジュール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#robot-hats">ロボットHATS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pca9865">PCA9865</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#motor-driver-module">モータードライバーモジュール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-follower-module">ラインフォロワーモジュール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#light-follower-module">ライトフォロワーモジュール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ultrasonic-obstacle-avoidance-module">超音波障害物回避モジュール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sunfounder-sf006c-servo">SunFounder SF006Cサーボ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dc-gear-motor">DCギアモーター</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copyright-notice">著作権表示</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder_PiCar-S</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="appendix.html">付録</a> &raquo;</li>
+        
+      <li>モジュール</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="modules">
+<h1>モジュール<a class="headerlink" href="#modules" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<section id="robot-hats">
+<h2>ロボットHATS<a class="headerlink" href="#robot-hats" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="_images/image135.jpeg" src="_images/image135.jpeg" />
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>ロボットHATS**は40ピンRaspberry Piに特別に設計されたHATであり、Raspberry Pi世代3モデルB、世代3モデルB +、世代4モデルBで動作し、GPIOポートからRaspberry Piに電力を供給する。HATSのルールに基づいた理想的なダイオードの設計により、USBケーブルとDCポートの両方を介してRaspberry Piに電源を供給できるため、バッテリーの電力不足によってTFカードが損傷することを防ぐことができる。PCF8591はI2C通信とアドレス0x48を備えたADCチップとして使用される。</p>
+<img alt="_images/image136.jpeg" src="_images/image136.jpeg" />
+<p><strong>1.</strong> <strong>デジタルポート</strong>：3線式デジタルセンサーポート、信号電圧：3.3V、VCC電圧：3.3V。</p>
+<p><strong>2.</strong> <strong>アナログポート</strong>：3線4チャネル8ビットADCセンサーポート、基準電圧：3.3V、VCC電圧：3.3V。</p>
+<p><strong>3.</strong> <strong>I2Cポート</strong>：3.3V I2Cバスポート</p>
+<p><strong>4.</strong> <strong>5V電源出力</strong>：PWMドライバーへの5V電源出力。</p>
+<p><strong>5.</strong> <strong>UARTポート</strong>：4線UARTポートと5V VCCはUSBへのSunFounder FTDIシリアルと完全に連携する。</p>
+<p><strong>6.</strong> <strong>モーター制御ポート</strong>：モーター用5V、モーターMAとMBの方向制御、フローティングピンNC、モータードライバーモジュールとの連携。</p>
+<p><strong>7.</strong> <strong>スイッチ</strong>：電源スイッチ</p>
+<p><strong>8.</strong> <strong>電源インジケータ</strong>：電圧を指示する-2つのインジケータが点灯：&gt; 7.9V。1つのインジケーター：7.9V〜7.4V。インジケータ点灯なし：&lt;7.4V。バッテリーを保護するために、インジケーターが点灯していない場合は、充電する際にこれを取り出してください。電源インジケータは単純なコンパレータ回路によって測定された電圧に依存する。負荷によっては検出電圧が通常より低下する場合があるので参考値としてご利用ください。</p>
+<p><strong>9.</strong> <strong>電源ポート</strong>：5.5/2.1mm標準DCポート、入力電圧：8.4〜7.4V（制限された動作電圧：12V〜6V）。</p>
+</section>
+<section id="pca9865">
+<h2>PCA9865<a class="headerlink" href="#pca9865" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="_images/image137.jpeg" src="_images/image137.jpeg" />
+<p>PCA9685 16チャネル12ビットI2CバスPWMドライバー。独立したPWM出力電力をサポートし、並列接続用の4線式I2Cポート、PWM出力用の区別された3色ポートをより簡単に利用できる。</p>
+<img alt="_images/image138.jpeg" src="_images/image138.jpeg" />
+<p>1. <strong>PWM output ports</strong>: 3-color ports, independent power PWM output
+port, connect to the servo directly.</p>
+<p>2 &amp; 3. <strong>I2Cポート</strong>：4線式I2Cポートは並列で使用できる。3.3V/5.5Vに対応</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>PWM電源入力</strong>：最大12V。</p></li>
+<li><p><strong>LED</strong>：チップとPWM電源入力用電源インジケータ。</p></li>
+</ol>
+</section>
+<section id="motor-driver-module">
+<h2>モータードライバーモジュール<a class="headerlink" href="#motor-driver-module" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>モータードライバーモジュールは低発熱の小型パッケージモータードライブである。</p>
+<img alt="_images/image139.jpeg" src="_images/image139.jpeg" />
+<p><strong>1.電源とモーター制御ポート</strong>：チップとモーターに電力を供給し、モーターの方向を制御するためのピンが含まれている。</p>
+<p><strong>2.モーターのPWM入力</strong>：2つのモーターの速度を調整するためのPWM信号入力。</p>
+<p><strong>3.モーター出力ポート</strong>：2つのモーターの出力ポート</p>
+</section>
+<section id="line-follower-module">
+<h2>ラインフォロワーモジュール<a class="headerlink" href="#line-follower-module" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="_images/image140.jpeg" src="_images/image140.jpeg" />
+<img alt="_images/image141.jpeg" src="_images/image141.jpeg" />
+<p>TCRT5000赤外線光電スイッチは高送信電力赤外線フォトダイオードと高感度フォトトランジスタを採用している。これは、オブジェクトのIR反射光の原理を適用することによって機能する。光は放射され、次に反射され、同期回路によって感知される。そして、光の強弱によって物体の有無を判断する。白黒の線を簡単に識別できる。</p>
+<p>言い換えると、フォトトランジスタが黒と白のラインを通過するときの異なる伝導レベルにより、異なる出力電圧が生成される可能性がある。したがって、必要なのは、Atmega328のADコンバーターによってデータを収集し、I2C通信を介してマスターコントロールボードにデータを送信することだけである。</p>
+<p>このモジュールは5つのTRT5000センサーを使用する赤外線追跡センサーである。TRT5000の青色LEDは発光管であり、通電すると人間の目には見えない赤外光を発する。センサーの黒い部分は受信に使用される。内部の抵抗器の抵抗値は、受信した赤外線によって変化する。</p>
+</section>
+<section id="light-follower-module">
+<h2>ライトフォロワーモジュール<a class="headerlink" href="#light-follower-module" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="_images/image142.jpeg" src="_images/image142.jpeg" />
+<img alt="_images/image143.jpeg" src="_images/image143.jpeg" />
+<p>フォトトランジスターはフォトダイオードとも呼ばれ、光を電流に変換するデバイスである。フォトンがPNジャンクションで吸収されると、電流が生成される。逆電圧が印加されると、デバイスの逆電流は光の輝度とともに変化する。光が強いほど、逆電流が大きくなる。ほとんどのフォトトランジスタはこのように動作する。</p>
+<p>HATSのADCチップは8ビットのアナログ信号を受信して整数に変換し、信号をRaspberry Piに転送する。Raspberry Piはデータを分析して、最も明るい領域（光源）の方向を決定し、4つの車輪のステアリングと動きを制御して光源に近づける。</p>
+<p>この実験では、光に焦点を当てた懐中電灯が必用する。少なくとも、モジュールの3つのフォトトランジスタに同時に到達するために、トーチのスポットサイズは大きすぎてはならない。まあ、あなたは小さなスポットサイズを得るために車の近くに懐中電灯を照らすこともできる。</p>
+</section>
+<section id="ultrasonic-obstacle-avoidance-module">
+<h2>超音波障害物回避モジュール<a class="headerlink" href="#ultrasonic-obstacle-avoidance-module" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="_images/image252.png" src="_images/image252.png" />
+<div class="line-block">
+<div class="line">モジュールには、前方の障害物までの距離を検出する超音波距離センサHC-SR04が搭載されています。 ロボットが障害物を避けるためによく使われています。 2つの穴があるので、ロボットに簡単に取り付けることができます。 4ピンの逆戻り防止ケーブルが付属しているので、よりタイトで簡単に配線ができます。</div>
+<div class="line">HC-SR04超音波距離センサは、2cmから400cmまでの距離を3mmの範囲精度で非接触で測定することができます。HC-SR04モジュールは、それぞれ超音波送信機、受信機、制御回路が含まれているため、HC-SR04モジュールを使用する際には、Trig端子とEcho端子の接続に注意する必要があります。 PiCar-Sに装着すると、距離を計測し、前方に障害物があるかどうかを検知します。</div>
+</div>
+<p><strong>原理</strong></p>
+<p>Trigに10usの短いパルスを供給してレンジングを開始し、モジュールは40 kHzで8サイクルの超音波バーストを送信し、Echoにエコーを上げる。エコーはパルス幅と距離に比例した距離オブジェクトである。トリガー信号を送信してからエコー信号を受信するまでの間に、Time Intervalを通じてRangeを計算できる。</p>
+<p>式：</p>
+<div class="math notranslate nohighlight">
+\[Range(m) = \frac{Time Interval \times 340_{m/s}}{2}\]</div>
+<p>または：</p>
+<div class="math notranslate nohighlight">
+\[\text{Range}\left( \text{cm} \right) = \frac{\text{Time Interval}}{58}\]</div>
+<p>または：</p>
+<div class="math notranslate nohighlight">
+\[\text{Range}(inchs) = \frac{\text{Time Interval}}{148}\]</div>
+<p>エコーへのトリガー信号を防ぐために、60ms以上の測定サイクルを使用してください。</p>
+</section>
+<section id="sunfounder-sf006c-servo">
+<h2>SunFounder SF006Cサーボ<a class="headerlink" href="#sunfounder-sf006c-servo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="_images/image145.png" src="_images/image145.png" />
+<p>SunFounder SF0180サーボは180度の3線式デジタルサーボである。60HzのPWM信号を利用し、物理制限はない。最大180度までの内部ソフトウェアのみによって制御される。</p>
+<p>電気仕様：</p>
+<img alt="_images/image253.png" src="_images/image253.png" />
+</section>
+<section id="dc-gear-motor">
+<h2>DCギアモーター<a class="headerlink" href="#dc-gear-motor" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="_images/image146.jpeg" src="_images/image146.jpeg" />
+<p>これは減速機付きのDCモーターである。以下のパラメーターを参照してください：</p>
+<img alt="_images/image254.png" src="_images/image254.png" />
+</section>
+<section id="copyright-notice">
+<h2>著作権表示<a class="headerlink" href="#copyright-notice" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このマニュアルのテキスト、画像とコードを含むがこれらに限定されないすべての内容は、SunFounder Companyが所有している。関連する規制と著作権法に基づき、著者と関連する権利所有者の法的権利を侵害することなく、個人的な研究、調査、享楽、またはその他の非営利目的でのみ使用してください。許可なく営利目的でこれを使用する個人または組織については、会社は法的措置を取る権利を留保する。</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="installing_manually.html" class="btn btn-neutral float-left" title="手動でインストールする" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, sunfounder
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

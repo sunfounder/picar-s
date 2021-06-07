@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ラインフォロー &mdash; SunFounder_PiCar-S  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+        <script src="https://ezblock.cc/readDocFile/topHead.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://ezblock.cc/readDocFile/topHead.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="組合せ" href="combination.html" />
+    <link rel="prev" title="ライトフォロワー" href="light_following.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder_PiCar-S
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">部品一覧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">前書き</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_the_car.html">車の組み立て</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circuits_building.html">回路構築</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_started_with_raspberry_pi.html">ラズベリー パイを始めよう</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servo_configuration.html">サーボ構成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration.html">補正</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arming_the_car.html">車の装備！</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="obstacle_avoidance.html">障害物回避</a></li>
+<li class="toctree-l2"><a class="reference internal" href="light_following.html">ライトフォロワー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ラインフォロー</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">動作原理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#procedures">手順</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-make-a-track-for-line-following">ラインフォローの追跡を作る方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-explanation-of-line-follower-py">line_follower.pyのコードの説明</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="combination.html">組合せ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">付録</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder_PiCar-S</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="arming_the_car.html">車の装備！</a> &raquo;</li>
+        
+      <li>ラインフォロー</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/line_following.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="line-following">
+<h1>ラインフォロー<a class="headerlink" href="#line-following" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<section id="how-it-works">
+<h2>動作原理<a class="headerlink" href="#how-it-works" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ラインフォロワーは周囲の環境でラインを検出し、データをプロセッサーに転送する。プロセッサはデータを分析し、前輪と後輪の動きを制御するコマンドを送信する。</p>
+</section>
+<section id="procedures">
+<h2>手順<a class="headerlink" href="#procedures" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>ステップ1 組み立て</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>M3*10ネジ*8と**M3ナット**を使用してライトフォロアをセンサーコネクタに接続し、2つの**M3*10ネジ**と2つの**M3ナット**を使ってそれらを車に組み立てる。指でナットを下に持ってください。</p>
+<img alt="_images/image238.png" src="_images/image238.png" />
+<p><strong>ステップ2 配線</strong></p>
+<p>以下に示すように、4ピンのアンチリバースケーブルでラインフォロアモジュールをロボットHATSに接続する。</p>
+<img alt="_images/image125.png" src="_images/image125.png" />
+<p><strong>ステップ3 テスト</strong></p>
+<p>ディレクトリの例をチェックする：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">SunFounder_PiCar</span><span class="o">-</span><span class="n">S</span><span class="o">/</span><span class="n">example</span>
+</pre></div>
+</div>
+<p>i2c-toolsを介してi2cデバイスが認識されているかどうかを確認する</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">i2cdetect</span> <span class="o">-</span><span class="n">y</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<img alt="_images/image126.png" src="_images/image126.png" />
+<p>11がラインフォロワーのi2cアドレスであることが判明した。表示されない場合は、配線が正しくなく、Raspberry Piとのi2c通信も失敗したことを示す。次のステップの前に配線を確認する必要がある。</p>
+<p>テストコードを実行する。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">test_line_module</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<img alt="_images/image127.png" src="_images/image127.png" />
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ラインフォローモジュールをより適切に機能させるために、感度を調整してください。手順は次のとおりである：</p>
+<p>モジュールを白い表面に置き、値を読み取る。白い表面に置き、値を読み取る。</p>
+<p>差を計算し、最大値になるまで、次のモジュールのポテンショメーターを時計回りと反時計回りに回転させる。これでデバッグは完了した。</p>
+</div>
+<p><strong>ステップ4 実行を開始する！</strong></p>
+<p>ラインフォロワーコードを実行する</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">line_follower</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>プログラムの実行が開始されると、補正のヒントが画面に表示される。まずは白い表面でモジュールを補正する。ラインフォロアの5つのプローブすべてを白いボードの上に配置する。完了した補正のプロンプトが数秒後に画面に表示される。次に、黒い線の補正に進む。また、開始のプロンプトが画面に表示され、すべてのプローブが黒い線の上に配置される。完了した補正のプロンプトが数秒後に画面に表示される。</p>
+<p>モジュールの補正がすべて完了すると、車を走らせることができる。プローブ付きのPiCar-Sをホワイトボードの黒い線の上に置くと、線自体に従って進む。</p>
+</section>
+<section id="how-to-make-a-track-for-line-following">
+<h2>ラインフォローの追跡を作る方法<a class="headerlink" href="#how-to-make-a-track-for-line-following" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>車が黒い線をたどるように追跡を作成するには、次の材料を準備しなければならない：</p>
+<p>大きな紙、黒いテープのロール（黒い線）、ハードカードボード（サイズはトラックのサイズによって異なる）、または床や机などの平らな面。</p>
+<p>1. Spread the paper out smoothly on the hard board, and paste on the
+board or flat surface.</p>
+<ol class="arabic simple" start="2">
+<li><p>テープを紙に貼り付ける。</p></li>
+</ol>
+<p>作成のルール：</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>黒い線の幅：約18〜30mm、2つのプローブ間の距離、2つの隣接していないプローブ</dt><dd><p>の最小距離以下</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>2本の線の間隔：モジュール全体の幅である125mm以上で、2本の線を同時に検出した</dt><dd><p>ときに車が混乱することを防ぐ。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>曲線の直径：138mm以上。前輪が左または右に45度回転する場合、車が曲がる経路の</dt><dd><p>半径はホイールベース（前輪の中心と後輪の中心間の距離）と等しくなる。カーブの半径が小さすぎると、車はカーブをスムーズに曲がったり、通過したりことはできない。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>追跡のサンプルを以下に示す（元のマップファイルは**github**のフォルダー**マップ**の下にある）：</p>
+<img alt="_images/image128.png" src="_images/image128.png" />
+</section>
+<section id="code-explanation-of-line-follower-py">
+<h2>line_follower.pyのコードの説明<a class="headerlink" href="#code-explanation-of-line-follower-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>ワークフロー全体</strong></p>
+<p>マイナスの環境要因の干渉を考慮して、実際に使用する前にラインフォロワーセンサーを補正しなければならない。</p>
+<img alt="_images/image246.png" src="_images/image246.png" />
+<p>ここでは、ラインフォロワー補正とラインフォロイングを含む2つの主要な機能がメインプログラムに含まれている。</p>
+<p><strong>ラインフォロワー補正機能のサブフロー</strong></p>
+<p>ラインフォロア構成を実行するときは、センサーの上限と下限に近い、白色、次に黒色から始める。それから黒と白の平均値を基準値として使用し、検出された値が基準よりも高い場合、白でなければならない。検出された値が参照よりも低い場合は、黒になる。5つの検出器のステータスを5つの要素[0,0,0,0,0]で示す。</p>
+<img alt="_images/image247.png" src="_images/image247.png" />
+<p><strong>ライン追跡機能のサブフロー</strong></p>
+<img alt="_images/image248.png" src="_images/image248.png" />
+<p>ラインフォロー機能では、プローブの検出結果に応じてサーボの回転角度を異なるレベルに設定する。車の前の線が小さなカーブとして検出された場合、車は小さな角度で曲がる。大きいと車は大きい角度で曲がる。したがって、ここでは、a_step、b_step、c_step、d_stepの4つの角度回転定数を設定する。</p>
+<img alt="_images/image249.png" src="_images/image249.png" />
+<p>もともと車が前進するとき、サーボは90度である。車を運転して左折するには、サーボを90度以上の角度にしなければならない。右折するには、サーボは90ステップの角度でなければならない。</p>
+<p>特別な場合もある：車がコースから外れ、すべてのプローブが黒い線を検出できなくなった場合、以下のプログラムが続行される。</p>
+<img alt="_images/image250.png" src="_images/image250.png" />
+<p>場合によっては、特にカーブの半径が非常に小さい方向(1)に車が曲がる場合、車が軌道を使い果たして黒い線を検出できない場合がある(2)。このような場合に応答プログラムがないと、車は再び軌道を追うことができなくなる。したがって、車を反対方向に後退させるように応答プログラムを設定し(3)、次に黒い線が再び検出されるまで元の方向に戻り、前に進む(4)。</p>
+<p><strong>機能説明</strong></p>
+<p>コードのロジックは、上記のフローチャートに示すとおりである。</p>
+<p>インポートされた**SunFounder_Line_Follower**、<strong>front_wheels</strong>、<a href="#id1"><span class="problematic" id="id2">**</span></a>back_wheels**を含む3つのPythonモジュールがコードで使用されている。これらはこのキットのドライバーであり、それぞれラインフォロー、前輪と後輪となっている。</p>
+<p>関連クラスはここで定義されている。モジュールを適用して使用すると、関連するクラスのオブジェクトが作成され、ハードウェアのさまざまな部分がクラスオブジェクトによる関数を呼び出すことによって駆動される。</p>
+<p>次のモジュールと同様に、<a href="#id1"><span class="problematic" id="id2">**</span></a>lf**という名前のオブジェクトを作成する：</p>
+<p><strong>lf = Line_Follower_module.Line_Follower(references=REFERENCES)</strong></p>
+<p>パラメータは初期値であり、クラスオブジェクトを呼び出して関数を適用する。</p>
+<p><strong>lf.read_digital()</strong></p>
+<p>この機能はすべてのプローブのアナログ信号を読み取り、それをデジタル信号に変換するために使用される。信号が参照よりも大きい場合、対応するパラメーターは0になり、基準より低い場合、パラメーターは1になる。プローブは5つあるため、5つのパラメーターのリストを取得する。</p>
+<p><strong>fw.turn(turning_angle)</strong></p>
+<p>前輪回転機能。メインプログラムは前輪を回す場合にこの関数を呼び出す。パラメータは回転角度となっている。</p>
+<p><strong>bw.forward()</strong></p>
+<p><strong>bw.set_speed(forward_speed)</strong></p>
+<p>後輪には2つの機能が必要である。1つは回転方向を順方向に制御する（後ろに回転するには、<strong>bw.backward()</strong>）。2つ目は回転速度を設定する。パラメータは速度の値である（範囲0〜100）。パラメータが大きければ大きいほど、ホイールの回転が速くなる。</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="combination.html" class="btn btn-neutral float-right" title="組合せ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="light_following.html" class="btn btn-neutral float-left" title="ライトフォロワー" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, sunfounder
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

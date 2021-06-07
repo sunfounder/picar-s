@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>障害物回避 &mdash; SunFounder_PiCar-S  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+        <script src="https://ezblock.cc/readDocFile/topHead.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://ezblock.cc/readDocFile/topHead.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="ライトフォロワー" href="light_following.html" />
+    <link rel="prev" title="車の装備！" href="arming_the_car.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder_PiCar-S
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">部品一覧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">前書き</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_the_car.html">車の組み立て</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circuits_building.html">回路構築</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_started_with_raspberry_pi.html">ラズベリー パイを始めよう</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servo_configuration.html">サーボ構成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration.html">補正</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arming_the_car.html">車の装備！</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">障害物回避</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">動作原理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#procedures">手順</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-explanation-for-ultra-sonic-avoid-py">ultra_sonic_avoid.pyのコードの説明</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="light_following.html">ライトフォロワー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="line_following.html">ラインフォロー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="combination.html">組合せ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">付録</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder_PiCar-S</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="arming_the_car.html">車の装備！</a> &raquo;</li>
+        
+      <li>障害物回避</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/obstacle_avoidance.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="obstacle-avoidance">
+<h1>障害物回避<a class="headerlink" href="#obstacle-avoidance" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<section id="how-it-works">
+<h2>動作原理<a class="headerlink" href="#how-it-works" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>超音波障害物回避モジュールは収集したデータを検出して、障害物からの距離を計算できるRaspberry Piに転送する。Piは前輪と後輪の方向と回転を調整するコマンドを送信して、障害物がある場合は障害物から離れてPiCar-Sを制御する。</p>
+</section>
+<section id="procedures">
+<h2>手順<a class="headerlink" href="#procedures" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>ステップ1 組み立て</strong></p>
+<p>①超音波モジュールと超音波コネクタを M1.4*8 本のネジと M1.4 本のナットで接続します。</p>
+<p>②次に、超音波サポートに M3*10 本のネジと M3 ナットで接続します。</p>
+<p>③最後に、M3*10 本のネジと M3 ナットでアッパープレートに取り付けます。</p>
+<img alt="_images/image233.png" src="_images/image233.png" />
+<p><strong>注意：指でナットをスロットに入れて下に保持する方が簡単です。</strong></p>
+<p><strong>ステップ2 配線</strong></p>
+<p>以下に示すように、4ピンのアンチリバースケーブルで超音波障害物回避装置をロボットHATSに接続する。</p>
+<p>超音波モジュールは5Vまたは3.3Vの電源を持っていることがある。ここでは、3.3V電源を与える。</p>
+<img alt="_images/image234.png" src="_images/image234.png" />
+<img alt="_images/image108.png" src="_images/image108.png" />
+<p><strong>ステップ3 テスト</strong></p>
+<p>適用する前に、まず超音波障害物回避モジュールをテストする。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">SunFounder_PiCar</span><span class="o">-</span><span class="n">S</span><span class="o">/</span><span class="n">example</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">test_ultrasonic_module</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<img alt="_images/image109.png" src="_images/image109.png" />
+<p>距離の測定がそれほど正確でない場合がある。大丈夫よ。この25kHzの超音波モジュールは汎用のものではないが、<strong>約30〜40度の水平検出範囲を持っている</strong>。したがって、測定された距離はそれほど正確ではないかもしれないが、その狭い範囲は障害物回避に便利である。さらに、Raspberry Piはリアルタイムのオペレーティングシステムではないため、不正確な時間計算は距離測定の精度にも影響する。ただし、この超音波モジュールは障害物を回避することに十分である。</p>
+<p><strong>ステップ4 旅に出よう！</strong></p>
+<p>これで、上記のテスト後の超音波モジュールの効果の概要が分かるだろう。超音波障害物回避のコードを実行してみよう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">ultra_sonic_avoid</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>今のところ、PiCar-Sが起動した。車を地面に置くだけである。プログラムに従い、障害物を検出すると方向を転換する。障害物が近すぎる場合、後方に移動し、左/右に走行する。また、コードで障害物検出範囲のしきい値と後方に移動するしきい値を変更することもできる。</p>
+<img alt="_images/image235.png" src="_images/image235.png" />
+</section>
+<section id="code-explanation-for-ultra-sonic-avoid-py">
+<h2>ultra_sonic_avoid.pyのコードの説明<a class="headerlink" href="#code-explanation-for-ultra-sonic-avoid-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>ワークフロー全体</strong></p>
+<img alt="_images/image236.png" src="_images/image236.png" />
+<p>超音波モジュールはデジタル値、つまり高レベルまたは低レベルを返し、返された2つのレベル間の間隔時間を障害物までの距離に変換できる。したがって、ここではタイミングを求めるためにPythonでtimeモジュールを呼び出す。距離を計算する式は、超音波モジュールのドライバーに書き込まれる。メインプログラムは、対応するプログラムを呼び出して距離値を取得するだけである。</p>
+<p><strong>障害物回避機能のサブフロー</strong></p>
+<img alt="_images/image237.png" src="_images/image237.png" />
+<p>車が始動すると、障害物を検出して周期的に距離を測定したり、判断を下したり、行動を起こす。ここは三つのケースがある：障害物までの距離がしきい値と等しい場合、車は方向を変える。距離がしきい値を下回る場合、車は方向を変える前に後退する。距離がしきい値を超えると、続けて前進する。</p>
+<img alt="_images/image235.png" src="_images/image235.png" />
+<p><strong>機能説明</strong></p>
+<p><strong>ua = Ultra_Sonic.UltraSonic_Avoidance(17)</strong></p>
+<p>Ultra_SonicモジュールでUltraSonic_Avoidanceクラスのオブジェクト**ua**を作成する。丸括弧内の数字は、モジュールのSIGが接続されているピン番号を表す初期パラメーターである。BCM命名方法が適用されているため、Raspberry Piの対応するピンは＃17である。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>back_distance**と**turn_distance**の2つの定数は測距距離のしきい値を設定するためのものである。</p>
+<p><strong>while()</strong> loop</p>
+<p>検出された距離が**back_distance**より小さい場合、車は後方に移動する。距離は**back_distance**と**turn_distance**の間にある場合、車は方向を変える（前述のパラメータ**turning_angle**で回転角度を設定でき、角度は正または負の数で、それぞれ左または右に曲がることができる。サーボの最大回転角度を考慮すると、回転角度は**-90〜90度**であることを**注意**してください。そうしないと、サーボが焼ける恐れがある。）検出された距離が**turn_distance**より大きい場合、車は続けて前進する。</p>
+<p><strong>bw.backward()</strong>、後輪を後方に回転させる。** bw.forward()**、後輪を前方に回転させる。後輪駆動モジュールback_wheelsのこれら2つの機能は車輪の回転方向を設定するために使用される。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>bw.set_speed(speed) <a href="#id3"><span class="problematic" id="id4">**</span></a>、back_wheelsの関数で、ホイールの回転速度を設定する。数値が大きければ大きいほど（0〜100の範囲内）、ホイールの回転が速くなる。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>fw.turn(angle) <a href="#id3"><span class="problematic" id="id4">**</span></a>、back_wheelsの関数で、回転角度を設定する。車が直進するときの角度は90度で、左折するには数値を減らし、右折するには数値を増やす。</p>
+<p><strong>fw.turn_straight()</strong>、前輪を直進する角度に戻す。</p>
+<p><strong>詳細：</strong></p>
+<p><strong>back_distance**と**turn_distance</strong></p>
+<p>定数を変更して、車をオフに戻し、障害物回避中に希望の距離と角度で離れるようにしてください。</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="light_following.html" class="btn btn-neutral float-right" title="ライトフォロワー" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arming_the_car.html" class="btn btn-neutral float-left" title="車の装備！" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, sunfounder
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
